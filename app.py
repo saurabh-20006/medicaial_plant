@@ -290,23 +290,23 @@ if uploaded:
 # ------------------------------
 # 📊 STREAMLIT APP
 # ------------------------------
-    st.set_page_config(
-        page_title="Indian Medicinal Plant Identifier 🌱",
-        layout="wide",
-        page_icon="🌿"
-    )
+st.set_page_config(
+      page_title="Indian Medicinal Plant Identifier 🌱",
+     layout="wide",
+      page_icon="🌿"
+)
 
-    st.title("🌿 Indian Medicinal Plant & Leaf Identifier")
-    st.write("Upload an image of a plant or its leaf to identify and learn about it!")
-    if final_label in plant_info:
-        info = plant_info[final_label]
-        st.divider()
-        st.subheader(f"📘 About {final_label}")
-        st.write(f"**Benefits:** {info['BENEFITS']}")
-        st.write(f"**Found In:** {info['FOUND_IN']}")
-        st.write(f"**Uses:** {info['USES']}")
-    else:
-        st.info("ℹ️ No detailed information available for this plant.")
+st.title("🌿 Indian Medicinal Plant & Leaf Identifier")
+st.write("Upload an image of a plant or its leaf to identify and learn about it!")
+if final_label in plant_info:
+    info = plant_info[final_label]
+    st.divider()
+    st.subheader(f"📘 About {final_label}")
+    st.write(f"**Benefits:** {info['BENEFITS']}")
+    st.write(f"**Found In:** {info['FOUND_IN']}")
+    st.write(f"**Uses:** {info['USES']}")
+else:
+    st.info("ℹ️ No detailed information available for this plant.")
 
 # ------------------------------
 # ✨ FOOTER
