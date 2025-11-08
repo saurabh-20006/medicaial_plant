@@ -296,8 +296,7 @@ st.set_page_config(
       page_icon="🌿"
 )
 
-st.title("🌿 Indian Medicinal Plant & Leaf Identifier")
-st.write("Upload an image of a plant or its leaf to identify and learn about it!")
+
 if final_label in plant_info:
     info = plant_info[final_label]
     st.divider()
