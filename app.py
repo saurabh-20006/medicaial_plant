@@ -296,16 +296,18 @@ st.set_page_config(
       page_icon="🌿"
 )
 
-
-if final_label in plant_info:
-    info = plant_info[final_label]
-    st.divider()
-    st.subheader(f"📘 About {final_label}")
-    st.write(f"**Benefits:** {info['BENEFITS']}")
-    st.write(f"**Found In:** {info['FOUND_IN']}")
-    st.write(f"**Uses:** {info['USES']}")
+if 'final_label' not in locals() or final_label is None:
+    st.warning("Please upload an image to identify the plant.")
 else:
-    st.info("ℹ️ No detailed information available for this plant.")
+    if final_label in plant_info:
+        info = plant_info[final_label]
+        st.divider()
+        st.subheader(f"📘 About {final_label}")
+        st.write(f"**Benefits:** {info['BENEFITS']}")
+        st.write(f"**Found In:** {info['FOUND_IN']}")
+        st.write(f"**Uses:** {info['USES']}")
+    else:
+        st.info("ℹ️ No detailed information available for this plant.")
 
 # ------------------------------
 # ✨ FOOTER
